@@ -1,2 +1,2 @@
 # test-for-gpt
-Test repo for https://github.com/odegay/sonar-gpt-fixes
+## This is a test repo for experinments from: https://github.com/odegay/sonar-gpt-fixes
