@@ -1,14 +1,13 @@
 function divide(a, b) {
     if (b === 0) {
-      return "Error: Divide by zero";
+      return NaN;
     } else {
       return a / b;
     }
   }
-
-function test1 (asdasd: string) {
+ 
+function test1 (asdasd) {
     return asdasd;
 }
 
 export default test1;
-
