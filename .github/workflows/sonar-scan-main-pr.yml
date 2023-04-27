@@ -3,7 +3,7 @@ name: SonarCloud Scan Main
 on:
   push:
     branches:
-      - '**'
+      - 'main'
 
 jobs:
   build:
