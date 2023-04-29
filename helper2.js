@@ -8,3 +8,9 @@ function test1 (x: int) {
     console.log('x = 1');
   }
 }
+
+function test2(path: string) {
+  const path = parsedUrl.pathname;
+  const trimmedPath = path.replace(/^\/+|\/+$/g, ''); 
+  return trimmedPath;
+}
