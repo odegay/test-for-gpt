@@ -26,7 +26,7 @@ jobs:
 
       - name: Run GPT Fixes script        
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           SOURCE_BRANCH: ${{ github.head_ref }}
