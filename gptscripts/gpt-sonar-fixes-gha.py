@@ -17,7 +17,7 @@ SONAR_TOKEN = os.environ["SONAR_TOKEN"]
 OPENAI_API_KEY = os.environ["OPENAI_API_KEY"]
 GITHUB_OWNER = os.environ["GITHUB_OWNER"]
 GITHUB_REPO_NAME = os.environ["GITHUB_REPO_NAME"]
-GITHUB_ACCESS_TOKEN = os.environ["GITHUB_TOKEN"]
+GITHUB_TOKEN = os.environ["GITHUB_TOKEN"]
 GITHUB_USERNAME = os.environ["GITHUB_USERNAME"]
 GITHUB_EMAIL = os.environ["GITHUB_EMAIL"]
 SOURCE_BRANCH = os.environ["SOURCE_BRANCH"]
@@ -247,7 +247,7 @@ def analyze_branch_with_sonarcloud(branch_name):
 
 def create_pr(base, head, title, pr_results):
     url = f"https://api.github.com/repos/{GITHUB_OWNER}/{GITHUB_REPO_NAME}/pulls"
-    headers = {"Authorization": f"token {GITHUB_ACCESS_TOKEN}"}
+    headers = {"Authorization": f"token {GITHUB_TOKEN}"}
     data = {
         "title": title,
         "head": head,
@@ -261,8 +261,8 @@ def create_pr(base, head, title, pr_results):
     return response.json()
 
 def setup_git_repo(tmp_dir):
-    #repo_url = f'https://{GITHUB_ACCESS_TOKEN}@github.com/{GITHUB_OWNER}/{GITHUB_REPO_NAME}.git'
-    repo_url = f'https://x-access-token:{GITHUB_ACCESS_TOKEN}@github.com/{GITHUB_OWNER}/{GITHUB_REPO_NAME}.git'
+    #repo_url = f'https://{GITHUB_TOKEN}@github.com/{GITHUB_OWNER}/{GITHUB_REPO_NAME}.git'
+    repo_url = f'https://x-access-token:{GITHUB_TOKEN}@github.com/{GITHUB_OWNER}/{GITHUB_REPO_NAME}.git'
     repo = Repo.clone_from(repo_url, tmp_dir, branch='main')
 
     # Fetch all remote branches
@@ -311,7 +311,7 @@ def apply_fixes_and_push_changes(repo, new_branch):
 
 def get_workflow_run_status_and_conclusion(workflow_run_id):
     headers = {
-        "Authorization": f"token {GITHUB_ACCESS_TOKEN}",
+        "Authorization": f"token {GITHUB_TOKEN}",
         "Accept": "application/vnd.github+json",
     }
 
@@ -323,7 +323,7 @@ def get_workflow_run_status_and_conclusion(workflow_run_id):
 
 def find_latest_workflow_run(branch_name):
     headers = {
-        "Authorization": f"token {GITHUB_ACCESS_TOKEN}",
+        "Authorization": f"token {GITHUB_TOKEN}",
         "Accept": "application/vnd.github+json",
     }
 
@@ -362,7 +362,7 @@ def wait_for_workflow_completion(workflow_run_id):
 
 def trigger_github_actions_workflow(branch_name):
     headers = {
-        "Authorization": f"token {GITHUB_ACCESS_TOKEN}",
+        "Authorization": f"token {GITHUB_TOKEN}",
         "Accept": "application/vnd.github+json",
     }
 
