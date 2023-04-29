@@ -261,7 +261,11 @@ def create_pr(base, head, title, pr_results):
     return response.json()
 
 def setup_git_repo(tmp_dir):
+<<<<<<< HEAD
     # repo_url = f'https://{GITHUB_ACCESS_TOKEN}@github.com/{GITHUB_OWNER}/{GITHUB_REPO_NAME}.git'
+=======
+    #repo_url = f'https://{GITHUB_ACCESS_TOKEN}@github.com/{GITHUB_OWNER}/{GITHUB_REPO_NAME}.git'
+>>>>>>> main
     repo_url = f'https://x-access-token:{GITHUB_ACCESS_TOKEN}@github.com/{GITHUB_OWNER}/{GITHUB_REPO_NAME}.git'
     repo = Repo.clone_from(repo_url, tmp_dir, branch='main')
 
@@ -270,7 +274,10 @@ def setup_git_repo(tmp_dir):
 
     repo.config_writer().set_value("user", "name", GITHUB_USERNAME).release()
     repo.config_writer().set_value("user", "email", GITHUB_EMAIL).release()
-
+    
+    print("\n")
+    print("repURL")
+    print(repo_url)
     return repo
 
 def create_and_checkout_new_branch(repo):
@@ -278,7 +285,9 @@ def create_and_checkout_new_branch(repo):
     new_branch_name = f"fixes_{current_time}"
     new_branch = repo.create_head(new_branch_name)
     new_branch.checkout()
-
+    print("/n")
+    print("Repo")
+    print(repo)
     # Add the following line to push the new branch to the remote repository
     repo.git.push("origin", new_branch_name)
 
