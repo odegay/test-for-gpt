@@ -17,7 +17,7 @@ jobs:
           path: main-repo
 
       - name: Checkout script repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           repository: 'odegay/sonar-gpt-fixes'
           ref: 'main'
