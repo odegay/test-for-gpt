@@ -1,5 +1,4 @@
 import * as http from 'http';
-import * as url from 'url';
 
 function test1 (x: int) {
   if (x == 0) {
@@ -9,8 +8,8 @@ function test1 (x: int) {
   }
 }
 
-function test2(path: string) {
-  const path = parsedUrl.pathname;
-  const trimmedPath = path.replace(/^\/+|\/+$/g, ''); 
+function test2(pathname: string) {
+  const path = pathname;
+  const trimmedPath = path.replace(/^(\/+)|(\/+)$/g, ''); 
   return trimmedPath;
 }
