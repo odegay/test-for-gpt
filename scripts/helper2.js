@@ -11,6 +11,6 @@ function test1 (x: number) {
 function test2(url: string) {
   const parsedUrl = new URL(url);
   const path = parsedUrl.pathname;
-  const trimmedPath = path.replace(/^\/+|\/+$/g, '');
+  const trimmedPath = path.replace(/^(\/+|\/+)$/g, '');
   return trimmedPath;
 }
