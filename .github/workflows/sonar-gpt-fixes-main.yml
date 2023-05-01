@@ -36,8 +36,6 @@ jobs:
           pip install -r script-repo/gptscripts/python/requirements.txt
       
       - name: Run GPT Fixes script
-        with:
-          working-directory: main-repo        
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
