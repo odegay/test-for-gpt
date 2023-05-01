@@ -1,16 +1,15 @@
 import * as http from 'http';
-import * as url from 'url';
 
 function test1 (x: int) {
-  if (x == 0) {
+  if (x === 0) {
     console.log('x = 0');
-  } else if (x == 1) {
+  } else if (x === 1) {
     console.log('x = 1');
   }
 }
 
-function test2(path: string) {
-  const path = parsedUrl.pathname;
-  const trimmedPath = path.replace(/^\/+|\/+$/g, ''); 
+function test2(parsedUrl: string) {
+  const pathString = parsedUrl.pathname;
+  const trimmedPath = pathString.replace(/^\/+|\/+$/g, ''); 
   return trimmedPath;
 }
