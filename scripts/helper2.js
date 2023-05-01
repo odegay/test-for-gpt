@@ -1,5 +1,3 @@
-import * as http from 'http';
-
 function test1 (x: number) {
   if (x === 0) {
     console.log('x = 0');
