@@ -31,7 +31,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v3
         with:
-          path: main-repo
+          persist-credentials: true
 
       - name: Run GPT Fixes script        
         env:
