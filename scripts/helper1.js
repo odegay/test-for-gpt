@@ -1,6 +1,6 @@
-function divide(a: number, b: number): number | string {
+function divide(a: number, b: number): number {
     if (b === 0) {
-        return "Error: Divide by zero";
+        throw new Error("Divide by zero error");
     } else {
         return a / b;
    }
