@@ -13,3 +13,9 @@ function test2(parsedUrl: URL) {
   const trimmedPath = pathName.replace(/(^\/+)|(\/+$)/g, ''); 
   return trimmedPath;
 }
+
+function test3(number: int) {
+  const digit = 26;
+  let divisor = 2;
+  return digit/divisor;  
+}
