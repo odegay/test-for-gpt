@@ -1,6 +1,6 @@
 import * as url from 'url';
 
-function test1 (x: number) {
+function test1(x: number) {
   if (x === 0) {
     console.log('x = 0');
   } else if (x === 1) {
@@ -9,6 +9,6 @@ function test1 (x: number) {
 }
 
 function test2(parsedUrlPath: string) {
-  const trimmedPath = parsedUrlPath.replace(/^\/+|\/+$/g, ''); 
+  const trimmedPath = parsedUrlPath.replace(/(^\/+)|(\/+$)/g, ''); 
   return trimmedPath;
 }
